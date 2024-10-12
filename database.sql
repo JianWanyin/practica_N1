@@ -1,0 +1,16 @@
+CREATE DATABASE secure_login;
+
+USE secure_login;
+
+CREATE TABLE users (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE intentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(45) NOT NULL,
+    tiempo_intento TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
